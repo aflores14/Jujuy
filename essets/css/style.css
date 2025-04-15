@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0;
+    border: 0;
+}
+
+.header{
+    display: flex;
+    height: 100px;
+    width: 100%;
+}
+.header-img{
+    width: 100%;
+    height: 100%;
+    opacity: 70%;
+    object-fit: cover;
+}
+.contenedor-header{
+    position: absolute;
+    display: flex;
+    height: 100px;
+    width: 100%;
+}
+.img-logo{
+    height: 90px;
+    width: auto;
+}
+.subcontenedor-header{
+    position: relative;
+    text-align: end;
+    width: 100%;
+}
+nav {
+    display: "ruby";
+    width: 100%;
+  }
+  
+  nav ul {
+    display: inline-block;
+    list-style: none;
+    overflow: hidden;
+  }
+  
+  nav ul li {
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  nav ul li:hover {
+    background: #eca023;
+  }
+  section h1{
+    color: #fff;
+    text-align: center;
+  }
+
+  .seleccion-pagina{
+    background: #eca023;
+  }
+
+  /****/
+
+  .container-form{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+    margin-top: 20px;
+}
+.container-form h2{
+    margin-bottom: 10px;
+    font-size: 25px
+}
+.container-form p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.container-form a{
+    font-size: 17px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 700;
+}
+.container-form a i{
+    color: orange;
+    margin-right: 10px;
+}
+.container-form form .campo, textarea{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0px;
+}
+.container-form form textarea{
+    max-width: 530px;
+    min-width: 530px;
+    min-height: 140px;
+    max-height: 150px;
+}
+.container-form .btn-enviar{
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    background: orange;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.container-form .btn-enviar:hover{
+    background: #e39403;
+}
+.imagen-icon{
+    height: 20px;
+    margin-right: 10px;
+}
+/****/
