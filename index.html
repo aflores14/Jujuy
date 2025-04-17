@@ -1,105 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web de Ejemplo</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 10px;
-            text-align: right
-        }
-
-        nav a {
-            color: orange;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casas de Fiestas Infantiles Diversión Asegurada</title>
+    <link rel="stylesheet" href="./essets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./essets/img/img-Logo.png" />
 </head>
+
 <body>
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-    <header>
-        <h1>IDW  CUMPLEAÑOS</h1>
+    <header class="header">
+        <img src="./essets/img/image 2.svg" alt="Imagen fiesta" class="header-img" />
+        <section class="contenedor-header">
+            <img src="./essets/img/img-Logo.png" class="img-logo" />
+            <div class="subcontenedor-header">
+                <nav>
+                    <ul class="menu-lista">
+                        <li><a href="./index.html" class="seleccion-pagina">Principal</a></li>
+                        <li><a href="./informacion.html">Informacion</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <h1>IDW S.A.- Celebra los Momentos Más Especiales</h1>
+            </div>
+        </section>
     </header>
     <main>
-        <div class="card">
-            <img src="imagen1.jpg" alt="Imagen 1">
-            <h2>Título 1</h2>
-            <p>Descripción de la tarjeta 1.</p>
+        <section class="container-form">
+            <div class="info-form">
+                <h2>Descubre nuestros salones y servicios para crear la fiesta de cumpleaños perfecta para tus pequeños.
+                </h2>
+            </div>
+            <form>
+                <input type="submit" name="explorar" value="Explorar Salones" class="btn-enviar" />
+                <input type="submit" name="presupuesto" value="Solicitar Presupuesto" class="btn-2" />
+            </form>
+        </section>
+
+        <!-- Galeria de Imagenes-->
+        <!-- Inforacion -->
+        <br /><br />
+        <div class="info-container">
+            <p>En IDW nos dedicamos a hacer de cada celebración un momento inolvidable. Ofrecemos una variedad de
+                salones de eventos diseñados especialmente para fiestas de cumpleaños infantiles, equipados con todas
+                las comodidades y servicios que necesitas para crear un ambiente festivo y divertido. Nuestro objetivo
+                es ayudarte a organizar la fiesta perfecta, adaptada a tus necesidades y deseos.</p>
         </div>
-        <div class="card">
-            <img src="imagen2.jpg" alt="Imagen 2">
-            <h2>Título 2</h2>
-            <p>Descripción de la tarjeta 2.</p>
-        </div>
-        <div class="card">
-            <img src="imagen3.jpg" alt="Imagen 3">
-            <h2>Título 3</h2>
-            <p>Descripción de la tarjeta 3.</p>
-        </div>
-        <div class="card">
-            <img src="imagen4.jpg" alt="Imagen 4">
-            <h2>Título 4</h2>
-            <p>Descripción de la tarjeta 4.</p>
-        </div>
-        <div class="card">
-            <img src="imagen5.jpg" alt="Imagen 5">
-            <h2>Título 5</h2>
-            <p>Descripción de la tarjeta 5.</p>
-        </div>
+
+        <!-- Imagenes -->
+        <section class="gallery">
+            <div class="card">
+                <img src="./essets/img/salon1.jpg" alt="Salón Fiesta 1" />
+                <div class="card-description">
+                    <h3>Salón Fiesta 1</h3>
+                    <p>Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.</p>
+                    <br />
+                    <a href="#" class="btn-more-info">Más Información</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./essets/img/salon2.jpg" alt="Salón Fiesta 2" />
+                <div class="card-description">
+                    <h3>Salón Fiesta 2</h3>
+                    <p>Amplio y alegre, perfecto para fiestas de todos los tamaños.</p>
+                    <br />
+                    <a href="#" class="btn-more-info">Más Información</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./essets/img/salon3.jpg" alt="Salón Fiesta 3" />
+                <div class="card-description">
+                    <h3>Salón Fiesta 3</h3>
+                    <p>Disfruta de una decoración temática única para hacer tu celebración especial.</p>
+                    <br />
+                    <a href="#" class="btn-more-info">Más Información</a>
+                </div>
+            </div>
+        </section>
     </main>
+    <br /><br /><br />
     <footer>
-        <p>Contacto: ejemplo@correo.com | Teléfono: +54 123 456 789</p>
+        <p>&copy; 2025 IDW S.A. Todos los derechos reservados.</p>
+        <p>Desarrollado por Grupo 60</p>
     </footer>
 </body>
+
 </html>
