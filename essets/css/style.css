@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0;
     border: 0;
+    line-height: 1.6;
 }
 
 .header {
@@ -257,3 +258,26 @@ footer a:hover {
 }
 
 /* -------------- */
+
+.img-logo {
+    height: 90px;
+    width: auto;
+  }
+
+  #proceso-reserva,
+  #preguntas-frecuentes,
+  #tips-cumpleanos,
+  #servicios-adicionales,
+  #por-que-elegirnos {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .paso,
+  .pregunta,
+  .tip,
+  .servicio,
+  .razon {
+    margin-bottom: 15px;
+  }
