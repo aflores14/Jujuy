@@ -2,3 +2,22 @@
     width: 25px !important;
     color: orange;
 }
+
+.btn-custom-primary {
+    background-color: #4ABCAD;
+    /* color verde */
+    border-color: #4ABCAD;
+    color: #fff;
+    /* texto blanco */
+}
+
+.btn-custom-secondary {
+    background-color: #ff9800;
+    /* naranja */
+    border-color: #ff9800;
+    color: #fff;
+}
+
+.custom-bg {
+    background-color: #ff9800;
+}
