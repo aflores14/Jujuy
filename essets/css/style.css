@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+.imagen_{
+    width: 25px !important;
+    color: orange;
+}
 
 .btn-custom-primary {
-    background-color: #4CAF50;
+    background-color: #4ABCAD;
     /* color verde */
-    border-color: #4CAF50;
+    border-color: #4ABCAD;
     color: #fff;
     /* texto blanco */
 }
