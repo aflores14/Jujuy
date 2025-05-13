@@ -1,86 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casas de Fiestas Infantiles Diversión Asegurada</title>
-  <link rel="stylesheet" href="./essets/css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="icon" type="image/x-icon" href="./essets/img/img-Logo.png" />
+  <style>
+    /* Estilos personalizados para complementar Bootstrap y mejorar la responsividad */
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: #f8f9fa;
+      padding: 1rem 0;
+    }
+
+    .header-img {
+      display: none;
+    }
+
+    .img-logo {
+      max-height: 60px; /* Reducimos un poco el tamaño del logo para pantallas más pequeñas */
+      width: auto;
+    }
+
+    .menu-lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center; /* Centramos el menú en pantallas pequeñas */
+      flex-direction: column; /* Apilamos los items del menú en pantallas pequeñas */
+      align-items: center;
+    }
+
+    .menu-lista li {
+      margin: 0.5rem 0; /* Espacio vertical entre los items del menú en pantallas pequeñas */
+    }
+
+    @media (min-width: 768px) {
+      .menu-lista {
+        flex-direction: row; /* Volvemos a la disposición horizontal en pantallas medianas y grandes */
+        justify-content: flex-end;
+      }
+
+      .menu-lista li {
+        margin-left: 1rem;
+      }
+
+      .img-logo {
+        max-height: 70px; /* Volvemos al tamaño original del logo en pantallas medianas y grandes */
+      }
+    }
+
+    .menu-lista li a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .menu-lista li a:hover {
+      color: #0056b3;
+    }
+
+    .seleccion-pagina {
+      font-weight: bold;
+      color: #28a745 !important;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #2c3e50;
+    }
+
+    h1 {
+      font-size: 2rem; /* Reducimos el tamaño del título principal en pantallas pequeñas */
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.5rem; /* Volvemos al tamaño original del título en pantallas medianas y grandes */
+      }
+    }
+
+    #proceso-reserva,
+    #preguntas-frecuentes,
+    #tips-cumpleanos,
+    #servicios-adicionales,
+    #por-que-elegirnos {
+      padding: 1.5rem; /* Reducimos un poco el padding en pantallas pequeñas */
+      margin-bottom: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+      background-color: #fff;
+    }
+
+    .paso,
+    .pregunta,
+    .tip,
+    .servicio,
+    .razon {
+      margin-bottom: 1rem;
+    }
+
+    /* Aseguramos que las columnas se apilen correctamente en pantallas pequeñas */
+    .row > div {
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .row > div {
+        margin-bottom: 0; /* Removemos el margen inferior en pantallas medianas y grandes */
+      }
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem; /* Reducimos un poco el tamaño de la fuente en el footer */
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+  </style>
 </head>
-<style>
-  body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-  }
-
-  .img-logo {
-    height: 90px;
-    width: auto;
-  }
-
-
-  #proceso-reserva,
-  #preguntas-frecuentes,
-  #tips-cumpleanos,
-  #servicios-adicionales,
-  #por-que-elegirnos {
-    margin-bottom: 30px;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .paso,
-  .pregunta,
-  .tip,
-  .servicio,
-  .razon {
-    margin-bottom: 15px;
-  }
-</style>
 
 <body>
   <header class="header">
-    <img src="./essets/img/image 2.svg" alt="Imagen fiesta" class="header-img" />
-    <section class="contenedor-header">
-      <img src="./essets/img/img-Logo.png" class="img-logo" />
-      <div class="subcontenedor-header">
-        <nav>
-          <ul class="menu-lista">
-            <li><a href="./index.html">Principal</a></li>
-            <li><a href="./informacion.html" class="seleccion-pagina">Informacion</a></li>
-            <li><a href="./contacto.html">Contacto</a></li>
-          </ul>
-        </nav>
-        <h1>Información</h1>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-3 text-center text-md-left">
+          <img src="./essets/img/img-Logo.png" alt="Logo IDW S.A." class="img-fluid img-logo" />
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-end align-items-center">
+            <h1 class="mr-md-3 mb-0 d-md-none">Información</h1>
+            <nav class="mt-2 mt-md-0">
+              <ul class="menu-lista nav">
+                <li class="nav-item"><a class="nav-link" href="./index.html">Principal</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./informacion.html">Información</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+              </ul>
+            </nav>
+            <h1 class="ml-md-3 mb-0 d-none d-md-block">Información</h1>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   </header>
-  <main>
-    <section id="proceso-reserva">
-      <h2>Nuestro Proceso de Reserva</h2>
-      <div class="paso">
+  <main class="container mt-4">
+    <section id="proceso-reserva" class="row">
+      <h2 class="col-12 mb-3">Nuestro Proceso de Reserva</h2>
+      <div class="col-12 col-md-3 paso d-flex flex-column align-items-center">
+        <img src="imagen de contacto" alt="Contacto Inicial" class="img-fluid mb-2" style="max-width: 80px; height: auto;">
         <h3>1. Contacto Inicial</h3>
-        <p>Ponte en contacto con nosotros a través de nuestro formulario de contacto o número de teléfono.</p>
+        <p class="text-center">Ponte en contacto con nosotros a través de nuestro formulario de contacto o número de teléfono.</p>
       </div>
-      <div class="paso">
+      <div class="col-12 col-md-3 paso d-flex flex-column align-items-center">
+        <img src="idea" alt="Cuéntanos tus Ideas" class="img-fluid mb-2" style="max-width: 80px; height: auto;">
         <h3>2. Cuéntanos tus Ideas</h3>
-        <p>Cuéntanos sobre tus ideas y preferencias para el evento.</p>
+        <p class="text-center">Cuéntanos sobre tus ideas y preferencias para el evento.</p>
       </div>
-      <div class="paso">
+      <div class="col-12 col-md-3 paso d-flex flex-column align-items-center">
+        <img src="presupuesto" alt="Presupuesto Personalizado" class="img-fluid mb-2" style="max-width: 80px; height: auto;">
         <h3>3. Presupuesto Personalizado</h3>
-        <p>Te presentaremos un presupuesto detallado y personalizado.</p>
+        <p class="text-center">Te presentaremos un presupuesto detallado y personalizado.</p>
       </div>
-      <div class="paso">
+      <div class="col-12 col-md-3 paso d-flex flex-column align-items-center">
+        <img src="confirmacion" alt="Confirmación y Disfrute" class="img-fluid mb-2" style="max-width: 80px; height: auto;">
         <h3>4. Confirmación y Disfrute</h3>
-        <p>Una vez aprobado el presupuesto, confirmaremos la fecha y hora de tu evento. ¡Disfruta de una celebración
-          inolvidable!</p>
+        <p class="text-center">Una vez aprobado el presupuesto, confirmaremos la fecha y hora de tu evento. ¡Disfruta de una celebración inolvidable!</p>
       </div>
     </section>
     <section id="preguntas-frecuentes">
-      <h2>Preguntas Frecuentes sobre nuestros servicios</h2>
+      <h2 class="mb-3">Preguntas Frecuentes sobre nuestros servicios</h2>
       <div class="pregunta">
         <h3>¿Con cuánta anticipación debo reservar?</h3>
         <p>Recomendamos reservar con al menos 2 semanas de anticipación para asegurar la disponibilidad,
@@ -102,61 +203,68 @@
           fiestas de empresa.</p>
       </div>
     </section>
-    <section id="tips-cumpleanos">
-      <h2>Tips para un Cumpleaños Inolvidable</h2>
-      <div class="tip">
+    <section id="tips-cumpleanos" class="row">
+      <h2 class="col-12 mb-3">Tips para un Cumpleaños Inolvidable</h2>
+      <div class="col-12 col-md-6 col-lg-3 tip">
         <h3>1. Planifica con Anticipación</h3>
         <p>Para evitar el estrés de último minuto, es fundamental planificar cada detalle con tiempo.</p>
       </div>
-      <div class="tip">
+      <div class="col-12 col-md-6 col-lg-3 tip">
         <h3>2. Considera los Gustos</h3>
         <p>Ten en cuenta los gustos e intereses del cumpleañero al elegir la temática y las actividades.</p>
       </div>
-      <div class="tip">
+      <div class="col-12 col-md-6 col-lg-3 tip">
         <h3>3. No Olvides la Torta</h3>
         <p>La torta y las velas son elementos esenciales de cualquier celebración de cumpleaños.</p>
       </div>
-      <div class="tip">
+      <div class="col-12 col-md-6 col-lg-3 tip">
         <h3>4. ¡Relájate y Disfruta!</h3>
         <p>Una vez que todo esté organizado, relájate y disfruta de la celebración junto a tus seres queridos.</p>
       </div>
     </section>
-    <section id="servicios-adicionales">
-      <h2>Servicios Adicionales que Ofrecemos</h2>
-      <div class="servicio">
+    <section id="servicios-adicionales" class="row">
+      <h2 class="col-12 mb-3">Servicios Adicionales que Ofrecemos</h2>
+      <div class="col-6 col-md-3 servicio">
         <h3>Música y DJ</h3>
       </div>
-      <div class="servicio">
+      <div class="col-6 col-md-3 servicio">
         <h3>Fotografía y Video</h3>
       </div>
-      <div class="servicio">
+      <div class="col-6 col-md-3 servicio">
         <h3>Decoración Temática</h3>
       </div>
-      <div class="servicio">
+      <div class="col-6 col-md-3 servicio">
         <h3>Catering Personalizado</h3>
       </div>
-      <p>Además de nuestros paquetes estándar, ofrecemos servicios adicionales como música en vivo, fotografía
+      <p class="col-12 mt-2">Además de nuestros paquetes estándar, ofrecemos servicios adicionales como música en vivo,
+        fotografía
         profesional, decoración temática y catering personalizado para hacer de tu evento algo único.</p>
     </section>
-    <section id="por-que-elegirnos">
-      <h2>¿Por qué Elegirnos?</h2>
-      <div class="razon">
+    <section id="por-que-elegirnos" class="row">
+      <h2 class="col-12 mb-3">¿Por qué Elegirnos?</h2>
+      <div class="col-12 col-md-4 razon">
         <h3>Experiencia Comprobada</h3>
         <p>Contamos con años de experiencia en la organización de eventos de todo tipo.</p>
       </div>
-      <div class="razon">
+      <div class="col-12 col-md-4 razon">
         <h3>Personalización Total</h3>
         <p>Adaptamos cada evento a tus gustos y necesidades específicas.</p>
       </div>
-      <div class="razon">
+      <div class="col-12 col-md-4 razon">
         <h3>Profesionalismo y Dedicación</h3>
         <p>Nos encargamos de cada detalle con profesionalismo y dedicación.</p>
       </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 IDW S.A. Todos los derechos reservados.</p>
+  <footer class="bg-dark text-white py-3 mt-4">
+    <div class="container text-center">
+      <p>&copy; 2025 IDW S.A. Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
