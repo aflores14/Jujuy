@@ -1,170 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Casas de Fiestas Infantiles Diversión Asegurada</title>
-    <link rel="shortcut icon" href="./assets/img/img_Logo.png" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light w-100 bg-dark">
-        <div class="container-fluid ps-md-0 w-100">
-          <div class="container row w-100">
-            <a class="col-md-2 col-2" href="index.html">
-              <img
-                class="h-75 btn-group-vertical"
-                src="assets/img/img_Logo.png"
-                alt="logo"
-              />
-            </a>
-            <p class="btn-group-vertical col-8 col-sm-8 col-md-8 text-white">
-              IDW - Celebra los Momentos Más Especiales
-            </p>
-            <div class="col-2 mb-2 mt-2">
-              <button
-                class="navbar-toggler bg-white"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                col-md-4
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </div>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active text-white bg-warning" href="#"
-                  >Principal</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="informacion.html"
-                  >Información</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="./gestionSalon.html"
-                  >Admin</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <!-- botones de accion-->
-      <section class="container my-5">
-        <div
-          class="d-flex flex-column flex-lg-row align-items-center justify-content-center"
-        >
-          <h2 class="mb-3 mb-lg-0 fs-5 me-lg-4 text-center">
-            Descubre nuestros salones y servicios para crear la fiesta de
-            cumpleaños perfecta para tus pequeños.
-          </h2>
-          <div class="d-flex gap-3 mt-3 mt-lg-0">
-            <a
-              href="#salones"
-              class="btn btn-primary btn-lg w-100 mw-100 text-white"
-              >Explorar <br />Salones</a
-            >
-            <a
-              href="#presupuesto"
-              class="btn btn-warning btn-lg w-100 mw-100 text-white"
-              >Solicitar Presupuesto</a
-            >
-          </div>
-        </div>
-        <!-- botones de accion-->
-        <!-- Informacion -->
-      </section>
-      <section class="container my-5">
-        <div
-          class="d-flex flex-column flex-lg-row align-items-center justify-content-center p-4 bg-warning text-white rounded"
-        >
-          <h2 class="mb-3 mb-lg-0 fs-5 me-lg-4 text-center">
-            En IDW nos dedicamos a hacer de cada celebración un momento
-            inolvidable.
-          </h2>
-          <p>
-            Ofrecemos una variedad de salones de eventos diseñados especialmente
-            para fiestas de cumpleaños infantiles, equipados con todas las
-            comodidades y servicios que necesitas para crear un ambiente festivo
-            y divertido. Nuestro objetivo es ayudarte a organizar la fiesta
-            perfecta, adaptada a tus necesidades y deseos.
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casas de Fiestas Infantiles Diversión Asegurada</title>
+  <link rel="shortcut icon" href="./assets/img/img_Logo.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light w-100 bg-dark">
+      <div class="container-fluid w-100">
+        <div class="container d-flex align-items-center justify-content-between">
+          <a href="./index.html">
+            <img class="h-75" src="./assets/img/img_Logo.png" alt="logo" />
+          </a>
+          <p class="text-white text-center flex-grow-1">
+            IDW - Celebra los Momentos Más Especiales
           </p>
+          <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-      </section>
-
-      <!-- cards usando bootstrp -->
-      <section class="container my-5">
-        <div class="row g-4" id="contenedorCards"></div>
-      </section>
-    </main>
-    <footer class="mt-1 text-white text-center p-4 bg-dark w-100">
-      <div class="container">
-        <p>&copy; 2025 IDW S.A. Todos los derechos reservados.</p>
-        <p>Desarrollado por Grupo 60</p>
-        <div class="d-flex justify-content-center gap-3 mt-3">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            class="text-white fs-4"
-            aria-label="Facebook"
-          >
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            class="text-white fs-4"
-            aria-label="Twitter"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            class="text-white fs-4"
-            aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            class="text-white fs-4"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white bg-warning" href="#">Principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="informacion.html">Información</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./gestionSalon.html">Admin</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./js/cargaHome.js"></script>
-  </body>
+    </nav>
+  </header>
+  <main>
+    <!-- botones de accion-->
+    <section class="container my-5">
+      <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+        <h2 class="mb-3 mb-lg-0 fs-5 me-lg-4 text-center">
+          Descubre nuestros salones y servicios para crear la fiesta de
+          cumpleaños perfecta para tus pequeños.
+        </h2>
+        <div class="d-flex gap-3 mt-3 mt-lg-0">
+          <a href="#salones" class="btn btn-primary btn-lg w-100 mw-100 text-white">Explorar <br />Salones</a>
+          <a href="#presupuesto" class="btn btn-warning btn-lg w-100 mw-100 text-white">Solicitar Presupuesto</a>
+        </div>
+      </div>
+      <!-- botones de accion-->
+      <!-- Informacion -->
+    </section>
+    <section class="container my-5">
+      <div
+        class="d-flex flex-column flex-lg-row align-items-center justify-content-center p-4 bg-warning text-white rounded">
+        <h2 class="mb-3 mb-lg-0 fs-5 me-lg-4 text-center">
+          En IDW nos dedicamos a hacer de cada celebración un momento
+          inolvidable.
+        </h2>
+        <p>
+          Ofrecemos una variedad de salones de eventos diseñados especialmente
+          para fiestas de cumpleaños infantiles, equipados con todas las
+          comodidades y servicios que necesitas para crear un ambiente festivo
+          y divertido. Nuestro objetivo es ayudarte a organizar la fiesta
+          perfecta, adaptada a tus necesidades y deseos.
+        </p>
+      </div>
+    </section>
+
+    <!-- cards usando bootstrp -->
+    <section class="container my-5">
+      <div class="row g-4" id="contenedorCards"></div>
+    </section>
+  </main>
+  <footer class="mt-1 text-white text-center p-4 bg-dark w-100">
+    <div class="container">
+      <p>&copy; 2025 IDW S.A. Todos los derechos reservados.</p>
+      <p>Desarrollado por Grupo 60</p>
+      <div class="d-flex justify-content-center gap-3 mt-3">
+        <a href="https://facebook.com" target="_blank" class="text-white fs-4" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="text-white fs-4" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="text-white fs-4" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="text-white fs-4" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <script src="./js/cargaHome.js"></script>
+</body>
+
 </html>
