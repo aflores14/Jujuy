@@ -54,14 +54,28 @@ function mostrarSalones() {
     tablaBody.innerHTML = '';
 
     const salones = JSON.parse(localStorage.getItem('salones')) || [];
-
+    let posicion = 0;
     salones.forEach(salon => {
         const fila = document.createElement('tr');
         fila.innerHTML = `
             <td>${salon.titulo}</td>
             <td>${salon.descripcion}</td>
             <td>${salon.imagen}</td>
+            <td>
+            <button type="submit" class="btn btn-warning" onClick="eventoModificar('${salon.titulo}','${salon.descripcion}','${salon.imagen}','${posicion}')">Modificar</button>
+            <button type="submit" class="btn btn-danger" onClick="eventoEliminar('${salon.posicion}')">Eliminar</button>
+            </td>
         `;
         tablaBody.appendChild(fila);
+        posicion++;
     });
 }
+
+document.getElementById('btnCancelar')?.addEventListener('click', function (event) {
+        document.getElementById('titulo').value = '';
+        document.getElementById('descripcion').value = '';
+        document.getElementById('imagen').value = 'salon1.jpg';
+        document.getElementById('btnModificarSalon').style.visibility = 'hidden';
+        document.getElementById('btnAgregarSalon').style.visibility = 'visible';
+        document.getElementById('btnAgregarSalon').style.visibility = 'visible';
+    });
