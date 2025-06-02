@@ -1,95 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/img-Logo.png" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/img/img_Logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light w-100 bg-dark">
-            <div class="container-fluid ps-md-0 w-100">
-                <div class="container row w-100">
-                    <a class="col-md-2 col-2" href="index.html">
-                        <img class="h-75 btn-group-vertical" src="assets/img/img_Logo.png" alt="logo" />
-                    </a>
-                    <p class="btn-group-vertical col-8 col-sm-8 col-md-8 text-white">
-                        IDW - Celebra los Momentos Más Especiales
-                    </p>
-                    <div class="col-2 mb-2 mt-2">
-                        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="./index.html">Principal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="./informacion.html">Información</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="./contacto.html">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-white bg-warning" href="./login.html">Admin</a>
-                        </li>
-                    </ul>
-                </div>
+      <nav class="navbar navbar-expand-lg navbar-light w-100 bg-dark">
+        <div class="container-fluid ps-md-0 w-100">
+          <div class="container row w-100">
+            <a class="col-md-2 col-2" href="index.html">
+              <img
+                class="h-75 btn-group-vertical"
+                src="assets/img/img_Logo.png"
+                alt="logo"
+              />
+            </a>
+            <p class="btn-group-vertical col-8 col-sm-8 col-md-8 text-white">
+              IDW - Celebra los Momentos Más Especiales
+            </p>
+            <div class="col-2 mb-2 mt-2">
+              <button
+                class="navbar-toggler bg-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
             </div>
-        </nav>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./index.html">Principal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./informacion.html"
+                  >Información</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./contacto.html"
+                  >Contacto</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white bg-warning"
+                  href="./login.html"
+                  >Admin</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main class="container py-5">
-        <div id="mensaje" class="alert alert-info text-center"></div>
-        <h2 class="mb-4">Iniciar sesión</h2>
-        <form id="loginForm">
-            <div class="mb-3">
-                <label for="usuario" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="usuario" required />
-            </div>
-            <div class="mb-3">
-                <label for="contrasena" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="contrasena" required />
-            </div>
-            <button type="submit" class="btn btn-primary">Ingresar</button>
-        </form>
+      <div id="mensaje" class="alert alert-info text-center"></div>
+      <h2 class="mb-4">Iniciar sesión</h2>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input type="text" class="form-control" id="usuario" required />
+        </div>
+        <div class="mb-3">
+          <label for="contrasena" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="contrasena"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
     </main>
 
     <footer class="mt-1 text-white text-center p-4 bg-dark w-100">
-        <div class="container">
-            <p>&copy; 2025 IDW S.A. Todos los derechos reservados.</p>
-            <p>Desarrollado por Grupo 60</p>
-            <div class="d-flex justify-content-center gap-3 mt-3">
-                <a href="https://facebook.com" target="_blank" class="text-white fs-4" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="text-white fs-4" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="text-white fs-4" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="text-white fs-4" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
+      <div class="container">
+        <p>&copy; 2025 IDW S.A. Todos los derechos reservados.</p>
+        <p>Desarrollado por Grupo 60</p>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            class="text-white fs-4"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            class="text-white fs-4"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            class="text-white fs-4"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            class="text-white fs-4"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/login.js"></script>
-</body>
-
+  </body>
 </html>
