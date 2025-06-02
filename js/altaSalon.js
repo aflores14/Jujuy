@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     verificarSesion();
-    inicializarEventos();
-    mostrarSalones();
 });
 
 function verificarSesion() {
     if (!sessionStorage.getItem('usuario')) {
         window.location.href = './login.html';
+    }else{
+        inicializarEventos();
+        mostrarSalones();
     }
 }
 
