@@ -32,7 +32,7 @@ function cerrarSesion() {
 
 function obtenerDatosFormulario() {
     const salones = JSON.parse(localStorage.getItem('salones')) || [];
-    const ultimoId = salones.length > 0 ? salones[salones.length - 1].id : 0;    
+    const ultimoId = salones.length > 0 ? salones[salones.length - 1].id : 0;
     return {
         id: ultimoId + 1,
         titulo: document.getElementById('titulo')?.value || '',
@@ -49,7 +49,7 @@ function guardarSalon(salon) {
 
 function mostrarSalones() {
     const tablaBody = document.querySelector('#tablaSalones tbody');
-    if (!tablaBody) return; // Evita errores si la tabla no existe
+    if (!tablaBody) return;
 
     tablaBody.innerHTML = '';
 
