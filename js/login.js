@@ -17,7 +17,7 @@ function verificarSesion() {
 document.addEventListener("DOMContentLoaded", () => {
     if (sessionStorage.getItem("usuario")) {
         alert("Este usuario ya está logueado");
-        window.location.href = "./altaSalon.html";
+        window.location.href = "./gestionSalon.html";
     }
 });
 
@@ -29,7 +29,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
     if (usuario === "admin" && pass === "admin") {
         sessionStorage.setItem("usuario", usuario);
-        window.location.href = "./altaSalon.html";
+        window.location.href = "./gestionSalon.html";
     } else {
         alert("Usuario incorrecto");
     }
