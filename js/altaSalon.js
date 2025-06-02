@@ -31,7 +31,10 @@ function cerrarSesion() {
 }
 
 function obtenerDatosFormulario() {
+    const salones = JSON.parse(localStorage.getItem('salones')) || [];
+    const ultimoId = salones.length > 0 ? salones[salones.length - 1].id : 0;    
     return {
+        id: ultimoId + 1,
         titulo: document.getElementById('titulo')?.value || '',
         descripcion: document.getElementById('descripcion')?.value || '',
         imagen: document.getElementById('imagen')?.value || ''
@@ -61,5 +64,4 @@ function mostrarSalones() {
         `;
         tablaBody.appendChild(fila);
     });
-
 }
