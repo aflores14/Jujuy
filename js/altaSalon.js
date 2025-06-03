@@ -95,7 +95,7 @@ function mostrarSalones() {
             <td>${salon.imagen}</td>
             <td>
             <button type="submit" class="btn btn-warning" onClick="eventoModificar('${salon.titulo}','${salon.descripcion}','${salon.imagen}','${posicion}')">Modificar</button>
-            <button type="submit" class="btn btn-danger" onClick="eventoEliminar('${salon.posicion}')">Eliminar</button>
+            <button type="submit" class="btn btn-danger" onClick="eventoEliminar('${posicion}')">Eliminar</button>
             </td>
         `;
         tablaBody.appendChild(fila);
