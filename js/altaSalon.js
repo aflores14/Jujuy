@@ -49,12 +49,43 @@ function guardarSalon(salon) {
 }
 
 function mostrarSalones() {
+    let salones = JSON.parse(localStorage.getItem("salones"));
+    if (salones === null) {
+        listaSalones = [
+        {
+            id: 1,
+            titulo: "Salón Fiesta 1",
+            descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            imagen: "salon1.jpg",
+        },
+        {
+            id: 2,
+            titulo: "Salón Fiesta 2",
+            descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            imagen: "salon2.jpg",
+        },
+        {
+            id: 3,
+            titulo: "Salón Fiesta 3",
+            descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            imagen: "salon3.jpg",
+        },
+        {
+            id: 4,
+            titulo: "Salón Fiesta 4",
+            descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            imagen: "salon1.jpg",
+        }
+        ];
+        localStorage.setItem("salones", JSON.stringify(listaSalones));
+    }
+    
     const tablaBody = document.querySelector('#tablaSalones tbody');
     if (!tablaBody) return;
 
     tablaBody.innerHTML = '';
 
-    const salones = JSON.parse(localStorage.getItem('salones')) || [];
+    salones = JSON.parse(localStorage.getItem('salones')) || [];
     let posicion = 0;
     salones.forEach(salon => {
         const fila = document.createElement('tr');
