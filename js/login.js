@@ -1,38 +1,46 @@
+import { Login } from '/js/auth.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('token')) {
+    alert('Este usuario ya está logueado');
+    window.location.href = './gestionSalon.html';
+  }
+  verificarSesion();
+});
+
+document.getElementById('loginForm').addEventListener('submit', async event => {
+  event.preventDefault();
+
+  const usuario = document.getElementById('usuario').value.trim();
+  const contrasena = document.getElementById('contrasena').value.trim();
+
+  const data = await Login(usuario, contrasena);
+
+  if (data?.accessToken) {
+    sessionStorage.setItem('usuario', usuario);
+    sessionStorage.setItem('token', data.accessToken);
+    mostrarMensaje(`Bienvenido, ${usuario}`, 'success');
+    window.location.href = './gestionSalon.html';
+  } else {
+    mostrarMensaje('Usuario o contraseña incorrectos', 'danger');
+  }
+});
+
 function mostrarMensaje(mensaje, tipo = 'info') {
-    const mensajeDiv = document.getElementById('mensaje');
-    mensajeDiv.className = `alert alert-${tipo}`;
-    mensajeDiv.innerText = mensaje;
+  const div = document.getElementById('mensaje');
+  if (div) {
+    div.className = `alert alert-${tipo}`;
+    div.innerText = mensaje;
+  }
 }
 
 function verificarSesion() {
-    const usuario = sessionStorage.getItem('usuario');
-    if (usuario) {
-        document.getElementById('nombreUsuario').innerText = usuario;
-        mostrarMensaje(`Bienvenido, ${usuario}`);
-    } else {
-        mostrarMensaje('Por favor, inicia sesión.\nUsuario: admin | Contraseña: admin', 'warning');
-    }
+  const usuario = sessionStorage.getItem('usuario');
+  const nombreSpan = document.getElementById('nombreUsuario');
+  if (usuario && nombreSpan) {
+    nombreSpan.innerText = usuario;
+    mostrarMensaje(`Bienvenido, ${usuario}`);
+  } else {
+    mostrarMensaje('Por favor, inicia sesión.', 'warning');
+  }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    if (sessionStorage.getItem("usuario")) {
-        alert("Este usuario ya está logueado");
-        window.location.href = "./gestionSalon.html";
-    }
-});
-
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const usuario = document.getElementById("usuario").value.trim();
-    const pass = document.getElementById("contrasena").value.trim();
-
-    if (usuario === "admin" && pass === "admin") {
-        sessionStorage.setItem("usuario", usuario);
-        window.location.href = "./gestionSalon.html";
-    } else {
-        alert("Usuario incorrecto");
-    }
-});
-
-window.onload = verificarSesion;
