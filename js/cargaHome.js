@@ -1,31 +1,13 @@
-// Obtener salones e imágenes desde localStorage
 let salones = JSON.parse(localStorage.getItem("salones"));
 let imagenes = JSON.parse(localStorage.getItem("imagenes"));
 
-// Precarga si está vacío
 if (!salones || !imagenes) {
-  salones = [
-    {
-      id: 1,
-      titulo: "Salón Fiesta 1",
-      descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares."
-    },
-    {
-      id: 2,
-      titulo: "Salón Fiesta 2",
-      descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares."
-    },
-    {
-      id: 3,
-      titulo: "Salón Fiesta 3",
-      descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares."
-    },
-    {
-      id: 4,
-      titulo: "Salón Fiesta 4",
-      descripcion: "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares."
-    }
-  ];
+    salones = [
+      { id: 1, titulo: 'Salón Fiesta', descripcion: 'Decorado con luces y globos' },
+      { id: 2, titulo: 'Salón Aventura', descripcion: 'Temática exploradores' },
+      { id: 3, titulo: 'Salón Encanto', descripcion: 'Estilo mágico y colorido' },
+      { id: 4, titulo: 'Salón Retro', descripcion: 'Decoración vintage y neón' }
+    ];
 
   imagenes = [
     {
@@ -54,7 +36,6 @@ if (!salones || !imagenes) {
   localStorage.setItem("imagenes", JSON.stringify(imagenes));
 }
 
-// Renderizar cards
 let contenedor = document.getElementById("contenedorCards");
 
 salones.forEach(element => {
@@ -69,7 +50,7 @@ salones.forEach(element => {
 
   let imagen = document.createElement("img");
   imagen.className = "card-img-top";
-  imagen.src = rutaImagen || "data:image/png;base64,iVBORw0..."; // backup en blanco
+  imagen.src = rutaImagen || "data:image/png;base64,iVBORw0...";
   imagen.alt = "Imagen Salón";
 
   let divContenedorCuerpo = document.createElement("div");

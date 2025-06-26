@@ -3,7 +3,7 @@ function eventoModificar(titulo, descripcion, imagen, posicionModificar) {
   document.getElementById('descripcion').value = descripcion;
   document.getElementById('btnModificarSalon').style.visibility = 'visible';
   document.getElementById('btnAgregarSalon').style.visibility = 'hidden';
-  document.getElementById('imagen').value = imagen; // campo base64
+  document.getElementById('imagen').value = imagen;
   document.getElementById('posicionModificar').value = posicionModificar;
   document.getElementById('titulo').focus();
 }
@@ -26,11 +26,9 @@ document.getElementById('btnModificarSalon')?.addEventListener('click', function
 
   const idSalon = salones[index].id;
 
-  // Actualizar salón
   salones[index].titulo = nuevoTitulo;
   salones[index].descripcion = nuevaDescripcion;
 
-  // Actualizar imagen asociada
   const imagenIndex = imagenes.findIndex(img => img.idSalon === idSalon);
   if (imagenIndex !== -1) {
     imagenes[imagenIndex].ruta = nuevaImagen;
@@ -52,7 +50,7 @@ function borrar() {
   document.getElementById('btnModificarSalon').style.visibility = 'hidden';
   document.getElementById('btnAgregarSalon').style.visibility = 'visible';
   document.getElementById('posicionModificar').value = '';
-  mostrarSalones(); // función definida en otro archivo
+  mostrarSalones();
 }
 window.eventoModificar = eventoModificar;
 window.mostrarSalones = mostrarSalones;
