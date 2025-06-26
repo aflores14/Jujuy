@@ -55,16 +55,19 @@
                 <a class="nav-link text-white" href="contacto.html">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="./gestionSalon.html"
-                  >Admin</a
+                <a class="nav-link text-white" href="presupuesto.html"
+                  >Presupuesto</a
                 >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="login.html">Admin</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    <main>
+    <main id="contenedorMain">
       <h2 class="mt-3 ms-5">Nuestro Proceso de Reserva</h2>
       <section class="container my-5">
         <div class="row g-4">
@@ -142,12 +145,7 @@
       </section>
       <h2 class="mt-3 ms-5">Servicios Adicionales que Ofrecemos</h2>
       <section id="servicios-adicionales" class="container my-5">
-        <div class="row g-4 col-auto">
-          <h3>Música y DJ</h3>
-          <h3>Fotografía y Video</h3>
-          <h3>Decoración Temática</h3>
-          <h3>Catering Personalizado</h3>
-        </div>
+        <div id="contenedorCards" class="row g-4 col-auto"></div>
       </section>
       <p class="mt-3 ms-5">
         Además de nuestros paquetes estándar, ofrecemos servicios adicionales
@@ -201,5 +199,6 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="js/informacion.js"></script>
   </body>
 </html>

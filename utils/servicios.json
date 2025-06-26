@@ -1,0 +1,24 @@
+{
+    "listadoServicios": [
+        {
+            "id": 1,
+            "descripcion": "Música y DJ",
+            "valor": 20000
+        },
+        {
+            "id": 2,
+            "descripcion": "Fotografía y Video",
+            "valor": 15000
+        },
+        {
+            "id": 3,
+            "descripcion": "Decoración Temática",
+            "valor": 17000
+        },
+        {
+            "id": 4,
+            "descripcion": "Catering Personalizado",
+            "valor": 25000
+        }
+    ]
+}
