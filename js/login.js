@@ -1,4 +1,4 @@
-import { Login } from '/js/auth.js';
+const API_URL = 'https://dummyjson.com/auth/login';
 
 document.addEventListener('DOMContentLoaded', () => {
   if (sessionStorage.getItem('token')) {
@@ -14,7 +14,7 @@ document.getElementById('loginForm').addEventListener('submit', async event => {
   const usuario = document.getElementById('usuario').value.trim();
   const contrasena = document.getElementById('contrasena').value.trim();
 
-  const data = await Login(usuario, contrasena);
+  const data = await loginAPI(usuario, contrasena);
 
   if (data?.accessToken) {
     sessionStorage.setItem('usuario', usuario);
@@ -25,6 +25,22 @@ document.getElementById('loginForm').addEventListener('submit', async event => {
     mostrarMensaje('Usuario o contraseña incorrectos', 'danger');
   }
 });
+
+async function loginAPI(username, password) {
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+
+    if (!response.ok) throw new Error('Credenciales incorrectas');
+    return await response.json();
+  } catch (error) {
+    console.error('Error en Login:', error.message);
+    return null;
+  }
+}
 
 function mostrarMensaje(mensaje, tipo = 'info') {
   const div = document.getElementById('mensaje');
