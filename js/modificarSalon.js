@@ -1,33 +1,56 @@
-function eventoModificar(titulo,descripcion,imagen,posicionModificar){
-    document.getElementById('titulo').value = titulo;
-    document.getElementById('descripcion').value = descripcion;
-    document.getElementById('btnModificarSalon').style.visibility = 'visible';
-    document.getElementById('btnAgregarSalon').style.visibility = 'hidden';
-    document.getElementById('imagen').value = imagen;
-    document.getElementById('posicionModificar').value = posicionModificar;
-    document.getElementById('titulo').focus();
+function eventoModificar(titulo, descripcion, imagen, posicionModificar) {
+  document.getElementById('titulo').value = titulo;
+  document.getElementById('descripcion').value = descripcion;
+  document.getElementById('btnModificarSalon').style.visibility = 'visible';
+  document.getElementById('btnAgregarSalon').style.visibility = 'hidden';
+  document.getElementById('imagen').value = imagen;
+  document.getElementById('posicionModificar').value = posicionModificar;
+  document.getElementById('titulo').focus();
 }
 
 document.getElementById('btnModificarSalon')?.addEventListener('click', function (event) {
-        lista = JSON.parse(localStorage.getItem("salones"));
-        if(document.getElementById('titulo').value==="" || document.getElementById('descripcion').value===""){
-            alert('Debe completar todos los datos para actualizar el Salon');
-        }else{
-            lista[document.getElementById('posicionModificar').value].titulo = document.getElementById('titulo').value;
-            lista[document.getElementById('posicionModificar').value].descripcion = document.getElementById('descripcion').value;
-            lista[document.getElementById('posicionModificar').value].imagen = document.getElementById('imagen').value;
-            localStorage.setItem('salones', JSON.stringify(lista));
-            borrar();
-        }
-    });
+  event.preventDefault();
 
-function borrar(){
-    document.getElementById('titulo').value = '';
-    document.getElementById('descripcion').value = '';
-    document.getElementById('imagen').value = 'salon1.jpg';
-    document.getElementById('btnModificarSalon').style.visibility = 'hidden';
-    document.getElementById('btnAgregarSalon').style.visibility = 'visible';
-    document.getElementById('btnAgregarSalon').style.visibility = 'visible';
-    document.getElementById('posicionModificar').value = '';
-    mostrarSalones();//funcion llamada desde altaSalon.js
+  let salones = JSON.parse(localStorage.getItem("salones")) || [];
+  let imagenes = JSON.parse(localStorage.getItem("imagenes")) || [];
+
+  const index = parseInt(document.getElementById('posicionModificar').value);
+  const nuevoTitulo = document.getElementById('titulo').value.trim();
+  const nuevaDescripcion = document.getElementById('descripcion').value.trim();
+  const nuevaImagen = document.getElementById('imagen').value.trim();
+
+  if (!nuevoTitulo || !nuevaDescripcion) {
+    alert('Debe completar todos los datos para actualizar el salón');
+    return;
+  }
+
+  const idSalon = salones[index].id;
+
+  salones[index].titulo = nuevoTitulo;
+  salones[index].descripcion = nuevaDescripcion;
+
+  const imagenIndex = imagenes.findIndex(img => img.idSalon === idSalon);
+  if (imagenIndex !== -1) {
+    imagenes[imagenIndex].ruta = nuevaImagen;
+  } else {
+    const nuevaId = imagenes.length > 0 ? imagenes[imagenes.length - 1].id + 1 : 1;
+    imagenes.push({ id: nuevaId, idSalon, ruta: nuevaImagen });
+  }
+
+  localStorage.setItem('salones', JSON.stringify(salones));
+  localStorage.setItem('imagenes', JSON.stringify(imagenes));
+
+  borrar();
+});
+
+function borrar() {
+  document.getElementById('titulo').value = '';
+  document.getElementById('descripcion').value = '';
+  document.getElementById('imagen').value = '';
+  document.getElementById('btnModificarSalon').style.visibility = 'hidden';
+  document.getElementById('btnAgregarSalon').style.visibility = 'visible';
+  document.getElementById('posicionModificar').value = '';
+  mostrarSalones();
 }
+window.eventoModificar = eventoModificar;
+window.mostrarSalones = mostrarSalones;
