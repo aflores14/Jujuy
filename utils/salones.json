@@ -1,0 +1,35 @@
+{
+    "listaSalones": [
+        {
+            "id": 1,
+            "titulo": "Salón Fiesta 1",
+            "descripcion": "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            "direccion": "Las lomas 111",
+            "valor": 20000,
+            "estado": "disponible"
+        },
+        {
+            "id": 2,
+            "titulo": "Salón Fiesta 2",
+            "descripcion": "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            "direccion": "Las peras 2222",
+            "valor": 20000,
+            "estado": "reservado"
+        },
+        {
+            "id": 3,
+            "titulo": "Salón Fiesta 3",
+            "descripcion": "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            "direccion": "Los manzanos 3333",
+            "valor": 15000,
+            "estado": "disponible"
+        },
+        {
+            "id": 4,
+            "titulo": "Salón Fiesta 4",
+            "descripcion": "Un espacio ideal para celebrar momentos inolvidables con tus amigos y familiares.",
+            "valor": 17000,
+            "estado": "disponible"
+        }
+    ]
+}
