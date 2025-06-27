@@ -3,12 +3,14 @@ import { listarsalones, listarimagenes } from "./utils/abmsalones.js";
 cargarDatos(await listarsalones(), await listarimagenes());
 
 function buscarImagen(listaI_,idsalon_){
-    let ruta = "./assets/img/salon1.jpg";
+    let ruta = './assets/img/salon1.jpg';
     listaI_.forEach(item=>{
         if(item.idsalon==idsalon_){
-            ruta = item.ruta;
+            if(item.ruta!="")
+                ruta = item.ruta;
         }
     });
+    console.log(ruta);
     return ruta;
 }
 

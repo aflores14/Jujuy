@@ -87,7 +87,7 @@ function borrardatos(){
     document.getElementById('descripcion').value = '';
     document.getElementById('precio').value = '';
     document.getElementById('direccion').value = '';
-    document.getElementById('imagen').value = 'salon1.jpg';
+    document.getElementById('imagen').value = '';
     document.getElementById('btnModificarSalon').style.visibility = 'hidden';
     document.getElementById('btnAgregarSalon').style.visibility = 'visible';
     document.getElementById('btnAgregarSalon').style.visibility = 'visible';
