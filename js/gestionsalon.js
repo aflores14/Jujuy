@@ -20,7 +20,7 @@ function mostrarSalones(listaSalones_) {
                 <td>${salon.descripcion}</td>
                 <td>${salon.direccion}</td>
                 <td>
-                <button id="btnAgregarModificar" type="submit" class="btn btn-warning" onClick="import('./js/utils/abmsalones.js').then(Module=>Module.cargarmodificarsalon('${salon.titulo}','${salon.descripcion}','${salon.id}','${posicion}','${salon.valor}','${salon.estado}','${salon.direccion}'))">Modificar</button>
+                <button id="btnAgregarModificar" type="submit" class="btn btn-warning" onClick="import('./js/utils/abmsalones.js').then(Module=>Module.cargarmodificarsalon('${salon.titulo}','${salon.descripcion}','${salon.id}','${salon.valor}','${salon.estado}','${salon.direccion}'))">Modificar</button>
                 <button type="submit" class="btn btn-danger" onClick="import('./js/utils/abmsalones.js').then(Module=>Module.eliminarsalon('${salon.id}'))">Eliminar</button>
                 </td>
             `;            
@@ -29,9 +29,6 @@ function mostrarSalones(listaSalones_) {
     });
 }}
 /*************************************/
-function modificar_(){
-    alert('aaa');
-}
 document.getElementById('imagenFile')?.addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
