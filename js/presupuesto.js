@@ -1,10 +1,10 @@
 import { listarsalones } from "./utils/abmsalones.js";
 import { listarServicios } from "../js/utils/abmservicios.js";
-//import { calcularPrespuesto, obtenerDatosServicios } from "./utils/calculopresupuesto.js";
+import { calcularPrespuesto, iniciarPresupuesto } from "./utils/calculopresupuesto.js";
 
 import { modal } from "./utils/popUp.js";
 
-
+iniciarPresupuesto();
 mostrarSalones(await listarsalones());
 /**Carga los salones*/
 function mostrarSalones(listaSalones_) {
@@ -17,7 +17,6 @@ function mostrarSalones(listaSalones_) {
             opcion.innerHTML = salon.titulo;
             if(band){
                 document.getElementById('precioSalon').innerHTML = salon.valor;
-                document.getElementById('precioTotal').innerHTML = salon.valor; 
                 opcion.selected = true;
                 band = false;
             }
@@ -46,7 +45,7 @@ function mostrarServicios(listaServicios_) {
                 <td>${servicio.descripcion}</td>
                 <td>${servicio.valor}</td>
                 <td>
-                <input id="${servicio.id}" type="checkbox" class="w-100"/>
+                <input type="checkbox" class="w-100" onchange="import('./js/utils/calculopresupuesto.js').then(Module=>Module.selecServicioPresupuesto('${servicio.id}'))"/>
                 </td>
             `;
             tablaServicio.append(fila);
@@ -55,10 +54,10 @@ function mostrarServicios(listaServicios_) {
 /**********/
 document.getElementById('btncalculo').addEventListener('click',()=>{
     if(document.getElementById('apellidoYnombre').value.trim()){
-        const apellYnomb = document.getElementById('apellidoYnombre');
+        const apellYnomb = document.getElementById('apellidoYnombre').value;
         const fecha = document.getElementById('fecha').value;
-        //actualizarPresupuesto(apellYnomb,fecha,obtenerdatosSalon(),obtenerServiciosSeleccionados());
-        console.log(obtenerDatosServicios(obtenerServiciosSeleccionados()));
+        let p = calcularPrespuesto(apellYnomb,fecha,obtenerdatosSalon());
+        mostrarPresupuesto(p);
     }else{
         modal('Advertencia','Debe completar todos los campos',2);
     }
@@ -72,32 +71,25 @@ function obtenerdatosSalon(){
         "valor": document.getElementById('nombreSalon').value,
     }
 }
-function obtenerServiciosSeleccionados(){
-    
-        const tabla_ = document.getElementById('listaServicioTabla');
-        if(tabla_.rows.length>0){
-            let indices = [];
-            const listacheckbox = document.querySelectorAll('#listaServicioTabla input[type="checkbox"]');
-            listacheckbox.forEach(check_=>{
-                if(check_.checked){
-                    indices.push(check_.id);
-                }
-            });
-            return indices
-        }else{
-            return [];
-        }   
+
+function mostrarPresupuesto(p){
+    document.getElementById('apellidoYnombrePresupuesto').innerHTML = p.apellidoYnombre;
+    document.getElementById('fechaPresupuesto').innerHTML = p.fecha;
+    document.getElementById('salonPresupuesto').innerHTML = p.tematica;
+    document.getElementById('salonPrecioPresupuesto').innerHTML = document.getElementById('precioSalon').innerHTML;
+    document.getElementById('precioTotal').innerHTML = p.valorTotal;
+    let tabla = document.getElementById('tablaServiciosBrindar');
+    tabla.innerHTML = '';
+    p.serviciosSeleccionados.forEach(item=>{
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${item.descripcion}</td>
+            <td>${item.valor}</td>
+            `;            
+        tabla.appendChild(fila);
+    });
 }
 
-async function obtenerDatosServicios(indices){
-    const l = await listarServicios();
-    let laux = [];
-    l.forEach(item=>{
-        indices.forEach(valor=>{
-            if(item.id == valor){
-                laux.push(item);
-            }
-        });
-    });
-    return laux;
-}
+document.getElementById('btnborrar').addEventListener('click',()=>{
+    window.location.reload();
+});

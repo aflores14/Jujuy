@@ -2,7 +2,7 @@ import {modal} from './popUp.js';
 
 async function cargaInicial(){
     try{
-        const response = await fetch('../utils/servicios.json');
+        const response = await fetch('./utils/servicios.json');
         if(!response.ok){
             modal("Error de carga","No se pudo cargar los servicios",0);
             return [];  
