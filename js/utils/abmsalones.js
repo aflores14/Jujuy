@@ -5,7 +5,6 @@ async function cargaInicial(){
         const response = await fetch('./utils/salones.json');
         if(!response.ok){
             modal("Error de carga","No se pudo cargar los salones",0);
-            console.log(response);
             return [];  
         }else{
             const respuesta = await response.json();
@@ -105,20 +104,10 @@ export function modificarsalon(titulo,descripcion,imagen,valor,estado,direccion)
 }
 
 export function eliminarsalon(id){
-    let lista = JSON.parse(localStorage.getItem("salones"));
     // Confirmación antes de eliminar
     if (confirm("¿Seguro que deseas eliminar este salón?")) {
-        //Eliminando Imagen
-        let lista = JSON.parse(localStorage.getItem("imagenes"));
-        let auxiliarimagen = [];
-        lista.forEach(item=>{
-            if(item.idsalon!=id){
-                auxiliarimagen.push(item);
-            }
-        });
-        localStorage.setItem("imagenes", JSON.stringify(auxiliarimagen));
         //Eliminando Salon
-        let listaa = JSON.parse(localStorage.getItem("imagenes"));
+        let listaa = JSON.parse(localStorage.getItem("salones"));
         let auxiliarsalon = [];
         listaa.forEach(item=>{
             if(item.id!=id){
@@ -126,6 +115,16 @@ export function eliminarsalon(id){
             }
         });
         localStorage.setItem("salones", JSON.stringify(auxiliarsalon));
+        //Eliminando Imagen
+        let lista_ = JSON.parse(localStorage.getItem("imagenes"));
+        let auxiliarimagen = [];
+        console.log(lista_);
+        lista_.forEach(item=>{
+            if(item.idsalon!=id){
+                auxiliarimagen.push(item);
+            }
+        });
+        localStorage.setItem("imagenes", JSON.stringify(auxiliarimagen));
+        window.location.reload();
     }
-    location.reload();
 }
