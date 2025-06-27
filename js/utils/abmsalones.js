@@ -61,12 +61,12 @@ export function agregarsalon(salon,imagen){
     lista.push(salon);
     localStorage.setItem("salones", JSON.stringify(lista));
     let listaimaganes = JSON.parse(localStorage.getItem("imagenes"));
-    listaimaganes.push({"id":listaimaganes.length,"idsalon":lista.length,"ruta":imagen});
+    listaimaganes.push({"id":listaimaganes.length+1,"idsalon":lista.length,"ruta":imagen});
     localStorage.setItem("imagenes", JSON.stringify(listaimaganes));
     return listarsalones();
 }
 
-export function cargarmodificarsalon(titulo,descripcion,id,posicion,valor,estado,direccion){
+export function cargarmodificarsalon(titulo,descripcion,id,valor,estado,direccion){
     document.getElementById('titulo').value = titulo;
     document.getElementById('descripcion').value = descripcion;
     document.getElementById('btnModificarSalon').style.visibility = 'visible';
@@ -74,14 +74,12 @@ export function cargarmodificarsalon(titulo,descripcion,id,posicion,valor,estado
     let listaimg = JSON.parse(localStorage.getItem("imagenes"));
     listaimg.forEach(item=>{
         if(item.idsalon==id){
-            document.getElementById('imagenPreview').value = item.ruta;
+            document.getElementById('imagen').value = item.ruta;
+            document.getElementById('imagenPreview').src = item.ruta;
+            document.getElementById('imagenPreview').className = "img-thumbnail mt-3";
         }
-        /************************************************** */
-        /***************************************************** */
-        /******************************************************* */
-        console.log(item.idsalon+"----------"+id);
     });
-    document.getElementById('posicionModificar').value = posicion;
+    document.getElementById('posicionModificar').value = id;
     document.getElementById('precio').value = valor;
     document.getElementById('direccion').value = direccion;
     document.getElementById('estado').disabled = false;
@@ -92,14 +90,24 @@ export function cargarmodificarsalon(titulo,descripcion,id,posicion,valor,estado
 
 export function modificarsalon(titulo,descripcion,imagen,valor,estado,direccion){
     let lista = JSON.parse(localStorage.getItem("salones"));
-    lista[document.getElementById('posicionModificar').value].titulo = titulo;
-    lista[document.getElementById('posicionModificar').value].descripcion = descripcion;
-    /***********************************VER COMO ACTUALIZAR LA IMAGEN*/
-    //lista[document.getElementById('posicionModificar').value].imagen = imagen;
-    lista[document.getElementById('posicionModificar').value].valor = valor;
-    lista[document.getElementById('posicionModificar').value].direccion = direccion;
-    lista[document.getElementById('posicionModificar').value].estado = estado;
-    localStorage.setItem("salones", JSON.stringify(lista));
+    for(let indice = 0; indice<lista.length;indice++){
+        if(lista[indice].id == document.getElementById('posicionModificar').value){
+            lista[indice].titulo = titulo;
+            lista[indice].descripcion = descripcion;
+            lista[indice].valor = valor;
+            lista[indice].direccion = direccion;
+            lista[indice].estado = estado;
+            /*ACTUALIZAR LA IMAGEN*/
+            let listaimg = JSON.parse(localStorage.getItem("imagenes"));
+            for(let indice = 0; indice<listaimg.length;indice++){
+                if(listaimg[indice].idsalon==document.getElementById('posicionModificar').value){
+                    listaimg[indice].ruta = imagen;
+                }
+            }
+            localStorage.setItem("salones", JSON.stringify(lista));
+            localStorage.setItem("imagenes", JSON.stringify(listaimg));
+        }
+    }
     return listarsalones();
 }
 
