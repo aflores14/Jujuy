@@ -123,18 +123,22 @@
           </div>
           <div class="col-md-6">
             <h2 class="w-100 text-center border-bottom">Presupuesto</h2>
-            <label>Apellido y Nombre:</label>
-            <label id="apellidoYnombrePresupuesto"
+            <label class="form-label">Apellido y Nombre:</label>
+            <label id="apellidoYnombrePresupuesto" class="form-label"
               >.......................</label
             >
             <br />
-            <label>Fecha:</label>
-            <label id="fechaPresupuesto">00/00/0000</label>
+            <label class="form-label">Fecha:</label>
+            <label class="form-label" id="fechaPresupuesto">00/00/0000</label>
             <br />
-            <label>Salon:</label
-            ><label id="salonPresupuesto">.......................</label>
-            <label>Precio[$]:</label
-            ><label id="salonPrecioPresupuesto">.......................</label>
+            <label class="form-label">Salon:</label
+            ><label class="form-label" id="salonPresupuesto"
+              >.......................</label
+            >
+            <label class="form-label">Precio[$]:</label
+            ><label class="form-label" id="salonPrecioPresupuesto"
+              >.......................</label
+            >
             <table title="SERVICIOS A BRINDAR" class="w-50">
               <thead>
                 <th class="w-75">Descripción</th>
@@ -142,7 +146,7 @@
               </thead>
               <tbody id="tablaServiciosBrindar"></tbody>
             </table>
-            <h3>Precio a pagar[$]</h3>
+            <h3 class="mt-5">Precio a pagar[$]</h3>
             <h3 id="precioTotal">0</h3>
           </div>
         </div>
@@ -151,13 +155,13 @@
         id="btncalculo"
         type="button"
         value="Calcular Presupuesto"
-        class="btn btn-warning"
+        class="btn btn-warning ms-3"
       />
       <input
         id="btnborrar"
         type="button"
         value="Borrar Carga"
-        class="btn btn-warning"
+        class="btn btn-warning ms-3"
       />
     </main>
     <footer class="text-white text-center bg-dark w-100">
