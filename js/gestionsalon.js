@@ -1,6 +1,10 @@
 import { listarsalones, agregarsalon, modificarsalon} from "../js/utils/abmsalones.js";
 import { modal } from "../js/utils/popUp.js";
 
+import { listarServicios } from "./utils/abmservicios.js";
+import { listarimagenes } from "./utils/abmsalones.js";
+listarimagenes();
+listarServicios();
 
 mostrarSalones(await listarsalones());
 
@@ -49,7 +53,7 @@ document.getElementById('formSalon')?.addEventListener('submit', async function 
         mostrarSalones(await agregarsalon(salon,document.getElementById('imagen')?.value));
         this.reset();
         limpiarImagen();
-        modal('Confirmacion','Se guardo el salon',0);
+        modal('Confirmacion','Se guardo el salon',1);
     });
 function limpiarImagen() {
   document.getElementById('imagen').value = '';
@@ -91,5 +95,5 @@ function borrardatos(){
 document.getElementById('btnModificarSalon')?.addEventListener('click', async function (event) {
         mostrarSalones(await modificarsalon(document.getElementById('titulo').value,document.getElementById('descripcion').value,document.getElementById('imagen').value,document.getElementById('precio').value,document.getElementById('estado').value,document.getElementById('direccion').value));
         borrardatos();
-        modal('Confirmacion','Se actualizo el salon',0);
+        modal('Confirmacion','Se actualizo el salon',1);
     });

@@ -3,7 +3,18 @@ export function modal(titulo,descripcion,opcion){
     const contenedorModal = document.createElement('div');
     contenedorModal.className = 'modal-container bg-secondary';
     const ventana = document.createElement('div');
-    ventana.className = 'modal-content bg-danger';
+    if(opcion==0){
+        ventana.className = 'modal-content';
+        ventana.style.backgroundColor = "#f97645";
+    }else{
+        if(opcion==1){
+            ventana.className = 'modal-content';
+            ventana.style.backgroundColor = "#89f7bd"
+        }else{
+            ventana.className = 'modal-content';
+            ventana.style.backgroundColor = "#fabd83"
+        }
+    }
     const titulo_ = document.createElement('h2');
     titulo_.innerHTML = titulo;
     ventana.append(titulo);

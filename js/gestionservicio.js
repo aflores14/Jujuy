@@ -15,8 +15,8 @@ function mostrarServicios(listaServicios_) {
                 <td>${servicio.descripcion}</td>
                 <td>${servicio.valor}</td>
                 <td>
-                <button id="btnAgregarServicio" type="submit" class="btn btn-warning" onClick="import('../js/utils/abmservicios.js').then(Module=>Module.cargarModificarServicio('${servicio.descripcion}','${servicio.valor}','${posicion}'))">Modificar</button>
-                <button type="submit" class="btn btn-danger" onClick="import('../js/utils/abmservicios.js').then(Module=>Module.eliminarServicio('${posicion}'))">Eliminar</button>
+                <button id="btnAgregarServicio" type="submit" class="btn btn-warning" onClick="import('./js/utils/abmservicios.js').then(Module=>Module.cargarModificarServicio('${servicio.descripcion}','${servicio.valor}','${posicion}'))">Modificar</button>
+                <button type="submit" class="btn btn-danger" onClick="import('./js/utils/abmservicios.js').then(Module=>Module.eliminarServicio('${posicion}'))">Eliminar</button>
                 </td>
             `;
             tablaBody.appendChild(fila);

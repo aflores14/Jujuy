@@ -1,4 +1,7 @@
 import { listarServicios } from "./utils/abmservicios.js";
+import { listarsalones, listarimagenes } from "./utils/abmsalones.js";
+listarsalones();
+listarimagenes();
 
 cargarDatos(await listarServicios());
 
