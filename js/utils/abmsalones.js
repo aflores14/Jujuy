@@ -106,9 +106,17 @@ export function modificarsalon(titulo,descripcion,imagen,valor,estado,direccion)
             }
             localStorage.setItem("salones", JSON.stringify(lista));
             localStorage.setItem("imagenes", JSON.stringify(listaimg));
+            limpiarImagen();
         }
     }
     return listarsalones();
+}
+
+function limpiarImagen() {
+  document.getElementById('imagen').value = '';
+  document.getElementById('imagenFile').value = '';
+  document.getElementById('imagenPreview').classList.add('d-none');
+  document.getElementById('imagenPreview').src = '';
 }
 
 export function eliminarsalon(id){
