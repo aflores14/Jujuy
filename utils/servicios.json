@@ -3,22 +3,26 @@
         {
             "id": 1,
             "descripcion": "Música y DJ",
-            "valor": 20000
+            "valor": 20000,
+            "selecprespuesto": "n"
         },
         {
             "id": 2,
             "descripcion": "Fotografía y Video",
-            "valor": 15000
+            "valor": 15000,
+            "selecprespuesto": "n"
         },
         {
             "id": 3,
             "descripcion": "Decoración Temática",
-            "valor": 17000
+            "valor": 17000,
+            "selecprespuesto": "n"
         },
         {
             "id": 4,
             "descripcion": "Catering Personalizado",
-            "valor": 25000
+            "valor": 25000,
+            "selecprespuesto": "n"
         }
     ]
 }
