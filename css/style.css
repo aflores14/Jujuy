@@ -71,3 +71,81 @@ main {
 .class_foto_usuario{
     width: 30px;
 }
+
+/* --- Estilos Generales del Modal --- */
+#salonModal {
+    .modal-content {
+        border-radius: 15px; 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+        background-color: #f8f9fa; 
+        animation: fadeInScale 0.3s ease-out; 
+        width: auto;
+    }
+    .modal-header {
+        background-color: #3f51b5; 
+        color: white; 
+        border-bottom: none; 
+        border-top-left-radius: 15px; 
+        border-top-right-radius: 15px;
+        padding: 1rem 1.5rem; 
+    }
+    .modal-header .btn-close {
+    filter: invert(1); 
+    opacity: 0.8;
+    }
+    .modal-header .btn-close:hover {
+    opacity: 1;
+    }
+    .modal-title {
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; 
+    font-size: 1.8rem; 
+    }
+    .modal-body {
+    padding: 1.5rem; 
+    color: #333; 
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6; 
+    }
+    .modal-body img {
+    border-radius: 10px; 
+    max-height: 300px; 
+    object-fit: cover; 
+    width: 100%; 
+    }
+    .modal-body p {
+    margin-bottom: 0.8rem; 
+    font-size: 1.1rem; 
+    }
+    .modal-body strong {
+    color: #555; 
+    }
+    .modal-footer {
+    border-top: none; 
+    padding: 1rem 1.5rem; 
+    justify-content: center; 
+    }
+    .modal-footer .btn-secondary {
+    background-color: #6c757d; 
+    border-color: #6c757d;
+    border-radius: 8px; 
+    padding: 0.75rem 2rem; 
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease; 
+    }
+    .modal-footer .btn-secondary:hover {
+    background-color: #5a6268; 
+    border-color: #545b62;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -15,9 +15,15 @@ function mostrarSalones(listaSalones_) {
         let posicion = 0;
         listaSalones_.forEach(salon => {
             const fila = document.createElement('tr');
+            let descripcion = "";
+            if(salon.descripcion.length>70){
+                descripcion = salon.descripcion.substring(0, 70) + '...';
+            }else{
+                descripcion = salon.descripcion;
+            }
             fila.innerHTML = `
                 <td>${salon.titulo}</td>
-                <td>${salon.descripcion}</td>
+                <td>${descripcion}</td>
                 <td>${salon.direccion}</td>
                 <td>
                 <button id="btnAgregarModificar" type="submit" class="btn btn-warning" onClick="import('./js/utils/abmsalones.js').then(Module=>Module.cargarmodificarsalon('${salon.titulo}','${salon.descripcion}','${salon.id}','${salon.valor}','${salon.estado}','${salon.direccion}'))">Modificar</button>
